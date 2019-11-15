@@ -20,6 +20,7 @@ initStoryshots({
   /* configuration options */
   test: imageSnapshot({
     storybookUrl: "http://localhost:9009",
-    getMatchOptions
+    getMatchOptions,
+    // ...(process.env.CI ? {chromeExecutablePath: "/usr/bin/chromium-browser"} : {}),
   })
 });

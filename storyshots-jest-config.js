@@ -15,7 +15,4 @@ const jestConfig = createJestConfig(
 );
 jestConfig.testMatch = ["<rootDir>/src/storyshots.test.js"];
 jestConfig.transformIgnorePatterns = [];
-
-console.log(jestConfig);
-
 module.exports = jestConfig;

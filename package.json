@@ -14,7 +14,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "storybook-jest": "jest storyshots.test.js --config=storyshots-jest-config.js"
+    "storybook-jest:watch": "npm-run-all --parallel storybook-jest:wait storybook",
+    "storybook-jest:wait": "wait-port http://localhost:9009 && yarn storybook-jest",
+    "storybook-jest": "jest --config=storyshots-jest-config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,7 +40,9 @@
     "@storybook/addon-storyshots-puppeteer": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
+    "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.12.0",
-    "require-context.macro": "^1.2.2"
+    "require-context.macro": "^1.2.2",
+    "wait-port": "^0.2.6"
   }
 }
