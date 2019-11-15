@@ -12,5 +12,7 @@ jobs:
           args: yarn
       - name: Test
         uses: ianwalter/puppeteer@v2.0.0
+        env:
+          CI: true
         with:
           args: ./test-ci.sh

@@ -16,11 +16,13 @@ const getMatchOptions = ({ context: { kind, story }, url }) => {
   return {};
 };
 
+console.log(process.env.CI, "CI");
+
 initStoryshots({
   /* configuration options */
   test: imageSnapshot({
     storybookUrl: "http://localhost:9009",
     getMatchOptions,
-    // ...(process.env.CI ? {chromeExecutablePath: "/usr/bin/chromium-browser"} : {}),
+    ...(process.env.CI ? {chromeExecutablePath: "/usr/bin/google-chrome-unstable"} : {}),
   })
 });
