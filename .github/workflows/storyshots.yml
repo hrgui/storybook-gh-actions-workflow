@@ -16,3 +16,8 @@ jobs:
           CI: true
         with:
           args: ./test-ci.sh
+      - uses: actions/upload-artifact@master
+        if: failure()
+        with:
+          name: image_snapshots
+          path: ./src/__image_snapshots__
