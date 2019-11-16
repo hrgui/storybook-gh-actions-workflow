@@ -19,5 +19,5 @@ jobs:
       - uses: actions/upload-artifact@master
         if: failure()
         with:
-          name: image_snapshots
-          path: ./src/__image_snapshots__
+          name: diff_output
+          path: ./src/__image_snapshots__/__diff_output__
